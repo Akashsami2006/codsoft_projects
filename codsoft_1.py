@@ -7,17 +7,12 @@ class TodoApp:
     def __init__(self, root):
         self.root = root
         self.root.title("To-Do List Application")
-        
-        # Task list
         self.tasks = []
         self.load_tasks()
-        
-        # UI Elements
         self.create_widgets()
         self.update_task_list()
     
     def create_widgets(self):
-        # Task entry frame
         entry_frame = ttk.Frame(self.root, padding="10")
         entry_frame.grid(row=0, column=0, sticky="ew")
         
@@ -31,7 +26,6 @@ class TodoApp:
         
         ttk.Button(entry_frame, text="Add Task", command=self.add_task).grid(row=2, column=1, pady=5, sticky="e")
         
-        # Task list frame
         list_frame = ttk.Frame(self.root, padding="10")
         list_frame.grid(row=1, column=0, sticky="nsew")
         
@@ -42,7 +36,6 @@ class TodoApp:
         self.task_tree.heading("Status", text="Status")
         self.task_tree.pack(fill="both", expand=True)
         
-        # Action buttons
         button_frame = ttk.Frame(self.root, padding="10")
         button_frame.grid(row=2, column=0, sticky="ew")
         
